@@ -1,0 +1,70 @@
+body {
+    background: repeating-linear-gradient(
+        45deg,
+        hotpink,
+        lime,
+        cyan,
+        yellow
+    );
+    text-align: center;
+    font-family: "Comic Sans MS", cursive;
+}
+
+button {
+    font-size: 30px;
+    padding: 20px;
+    background: red;
+    color: yellow;
+    border: 5px dashed blue;
+    cursor: pointer;
+}
+
+button:hover {
+    background: purple;
+    color: white;
+}
+
+.oculto {
+    display: none;
+}
+
+.parpadeo {
+    animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.arcoiris {
+    animation: rainbow 1s infinite;
+}
+
+@keyframes rainbow {
+    0% { color: red; }
+    20% { color: orange; }
+    40% { color: yellow; }
+    60% { color: green; }
+    80% { color: blue; }
+    100% { color: violet; }
+}
+
+.gif {
+    width: 300px;
+    transform: rotate(-5deg);
+}
+
+.casa {
+    width: 80%;
+    border: 10px solid fuchsia;
+}
+
+.texto-cutre {
+    font-size: 25px;
+    background: yellow;
+    color: red;
+    display: inline-block;
+    padding: 10px;
+}
