@@ -134,7 +134,7 @@ botonFinal.addEventListener("click", (e) => {
 document.body.classList.add("shake");
 setTimeout(() => document.body.classList.remove("shake"), 5000);
 
-const NUM_JESUS = 10;
+const NUM_JESUS = 5;
 const jesusImg = "assets/jesus.gif";
 
 function crearJesus(jesusi) {
