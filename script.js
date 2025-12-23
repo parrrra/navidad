@@ -171,3 +171,38 @@ function crearJesus(jesusi) {
 }
 
 crearJesus(NUM_JESUS);
+
+const sliderVolumen = document.getElementById("volumen");
+
+// aplica volumen al revés
+function aplicarVolumenInvertido(valor) {
+  const volumenInvertido = 1 - valor / 100;
+
+  musica.volume = volumenInvertido;
+
+  // si quieres que también afecte al módem:
+  // modem.volume = volumenInvertido;
+}
+
+// evento del slider
+sliderVolumen.addEventListener("input", (e) => {
+  aplicarVolumenInvertido(e.target.value);
+});
+
+// volumen inicial
+aplicarVolumenInvertido(sliderVolumen.value);
+
+sliderVolumen.addEventListener("input", (e) => {
+  aplicarVolumenInvertido(e.target.value);
+
+  if (e.target.value > 70) {
+    document.querySelector(".volumen-container label").innerText =
+      "🔇 SILENCIO PREMIUM";
+  } else if (e.target.value > 30) {
+    document.querySelector(".volumen-container label").innerText =
+      "🔉 VOLUMEN NORMAL";
+  } else {
+    document.querySelector(".volumen-container label").innerText =
+      "🔊 VOLUMEN INSOPORTABLE";
+  }
+});

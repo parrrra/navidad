@@ -250,3 +250,22 @@ body.shake {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+.volumen-container {
+    margin: 20px;
+    background: yellow;
+    border: 5px dashed red;
+    padding: 10px;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.volumen-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#botonInicio {
+    position: relative;
+    transition: transform 0.2s;
+}
