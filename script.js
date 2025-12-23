@@ -40,18 +40,25 @@ window.addEventListener("load", () => {
 });
 
 activarSonidoBoton.addEventListener("click", () => {
+  setTimeout(() => {
+    loading.style.display = "none";
+    modem.pause();
+    modem.currentTime = 0;
+  }, 15000);
+
+  for (let i = 0; i < 5; i++) {
+    explosion(
+      e.clientX + Math.random() * 100 - 50,
+      e.clientY + Math.random() * 100 - 50
+    );
+  }
+
   modem.volume = 0.6;
   modem.play();
   // Intentamos reproducir (funciona en la mayoría de navegadores)
   modem.play().catch(() => {
     console.log("El navegador bloqueó el autoplay del módem 😢");
   });
-
-  setTimeout(() => {
-    loading.style.display = "none";
-    modem.pause();
-    modem.currentTime = 0;
-  }, 15000);
 });
 
 const textos = [
@@ -88,6 +95,8 @@ function explosion(x, y) {
   setTimeout(() => {
     boom.remove();
   }, 600);
+
+  crearJesus(3);
 }
 
 function colorRandom() {
@@ -124,3 +133,45 @@ botonFinal.addEventListener("click", (e) => {
 
 document.body.classList.add("shake");
 setTimeout(() => document.body.classList.remove("shake"), 5000);
+
+const NUM_JESUS = 10;
+const jesusImg = "assets/jesus.gif";
+
+function crearJesus(jesusi) {
+  for (let i = 0; i < jesusi; i++) {
+    const img = document.createElement("img");
+    img.src = jesusImg;
+    img.classList.add("jesus");
+
+    const size = 80 + Math.random() * 80;
+    img.style.width = `${size}px`;
+
+    const zona = Math.floor(Math.random() * 4);
+
+    // ZONAS SEGURAS (bordes)
+    switch (zona) {
+      case 0: // arriba
+        img.style.top = `${Math.random() * 10}%`;
+        img.style.left = `${Math.random() * 100}%`;
+        break;
+      case 1: // abajo
+        img.style.bottom = `${Math.random() * 10}%`;
+        img.style.left = `${Math.random() * 100}%`;
+        break;
+      case 2: // izquierda
+        img.style.left = `${Math.random() * 5}%`;
+        img.style.top = `${Math.random() * 100}%`;
+        break;
+      case 3: // derecha
+        img.style.right = `${Math.random() * 5}%`;
+        img.style.top = `${Math.random() * 100}%`;
+        break;
+    }
+
+    img.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+    document.body.appendChild(img);
+  }
+}
+
+crearJesus(NUM_JESUS);

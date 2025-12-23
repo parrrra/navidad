@@ -223,3 +223,29 @@ body.shake {
         color: yellow;
     }
 }
+
+.jesus {
+    position: fixed;
+    width: 120px;
+    opacity: 0.85;
+    z-index: 1; /* detrás del contenido */
+    pointer-events: none;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%   { transform: translateY(0) rotate(0deg); }
+    50%  { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(-5deg); }
+}
+
+.jesus {
+    animation:
+        flotar 3s ease-in-out infinite,
+        girar-lento 10s linear infinite;
+}
+
+@keyframes girar-lento {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
