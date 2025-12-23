@@ -146,23 +146,19 @@ function crearJesus(jesusi) {
     const size = 80 + Math.random() * 80;
     img.style.width = `${size}px`;
 
-    const zona = Math.floor(Math.random() * 4);
+    const zona = Math.floor(Math.random() * 3);
 
     // ZONAS SEGURAS (bordes)
     switch (zona) {
-      case 0: // arriba
-        img.style.top = `${Math.random() * 10}%`;
-        img.style.left = `${Math.random() * 100}%`;
-        break;
-      case 1: // abajo
+      case 0: // abajo
         img.style.bottom = `${Math.random() * 10}%`;
         img.style.left = `${Math.random() * 100}%`;
         break;
-      case 2: // izquierda
+      case 1: // izquierda
         img.style.left = `${Math.random() * 5}%`;
         img.style.top = `${Math.random() * 100}%`;
         break;
-      case 3: // derecha
+      case 2: // derecha
         img.style.right = `${Math.random() * 5}%`;
         img.style.top = `${Math.random() * 100}%`;
         break;
