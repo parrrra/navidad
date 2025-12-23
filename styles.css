@@ -90,8 +90,8 @@ button:hover {
 }
 
 .barra-contenedor {
-    width: 60px;
-    height: 300px;
+    width: 300px;
+    height: 60px;
     border: 6px ridge blue;
     background: black;
     margin: 20px;
@@ -132,4 +132,94 @@ button:hover {
     50% { transform: translateX(3px); }
     75% { transform: translateX(-2px); }
     100% { transform: translateX(0); }
+}
+
+
+.explosion {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: explotar 0.6s ease-out forwards;
+}
+
+@keyframes explotar {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(15);
+        opacity: 0;
+    }
+}
+
+
+body.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-10px, 5px); }
+    50% { transform: translate(10px, -5px); }
+    75% { transform: translate(-5px, 10px); }
+    100% { transform: translate(0); }
+}
+
+
+.molino {
+    font-size: 40px;
+    font-weight: bold;
+    color: red;
+    background: yellow;
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: girar 1.5s linear infinite;
+
+    border: 5px dashed blue;
+}
+
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.molino {
+    animation:
+        girar 2s linear infinite,
+        saltar 0.5s ease-in-out infinite;
+}
+
+@keyframes saltar {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-100px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg) scale(1);
+        color: red;
+    }
+    50% {
+        transform: rotate(180deg) scale(1.5);
+        color: lime;
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        color: yellow;
+    }
 }
