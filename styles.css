@@ -90,7 +90,7 @@ button:hover {
 }
 
 .barra-contenedor {
-    width: 300px;
+    width: 600px;
     height: 60px;
     border: 6px ridge blue;
     background: black;
@@ -123,6 +123,7 @@ button:hover {
     80%  { height: 50%; }   /* WTF */
     90%  { height: 95%; }
     100% { height: 100%; }
+    100% { height: 90%; }
 }
 
 
