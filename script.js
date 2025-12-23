@@ -96,7 +96,7 @@ function explosion(x, y) {
     boom.remove();
   }, 600);
 
-  crearJesus(3);
+  crearJesus(1);
 }
 
 function colorRandom() {
