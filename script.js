@@ -7,6 +7,7 @@ const modem = document.getElementById("modem");
 const musica = document.getElementById("musica");
 const sonidoBoton = document.getElementById("sonidoBoton");
 const activarSonidoBoton = document.getElementById("activarSonido");
+const boomSound = document.getElementById("boomSound");
 
 botonInicio.addEventListener("click", () => {
   sonidoBoton.play();
@@ -69,6 +70,9 @@ setInterval(() => {
 function explosion(x, y) {
   const boom = document.createElement("div");
   boom.classList.add("explosion");
+
+  boomSound.currentTime = 0;
+  boomSound.play();
 
   boom.style.left = `${x}px`;
   boom.style.top = `${y}px`;
